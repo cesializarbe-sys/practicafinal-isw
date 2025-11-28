@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Clientes - CRUD</title>
+  <link rel="stylesheet" href="/estilos.css">
+  <script defer src="/crud.js"></script>
+</head>
+<body>
+  <header>
+    <div class="title-area">
+      <h1>Clientes</h1>
+      
+    </div>
+    <div class="user-area">
+      <span class="user-label">Usuario: <strong id="usuario-name"></strong></span>
+      <a class="logout-btn" href="/logout">Salir</a>
+    </div>
+  </header>
+
+  <section class="container grid">
+    <div id="msg" class="error" style="display:none"></div>
+
+    <aside class="panel form-panel-crud">
+      <div class="form-card">
+        <form id="form-cliente">
+          <input type="hidden" id="id_clientes" name="id_clientes" />
+          <div class="field"><label>DNI/RUC*</label><input name="dni_ruc" required /></div>
+          <div class="field"><label>Nombre completo*</label><input name="nombre_completo" required /></div>
+          <div class="field"><label>Teléfono</label><input name="telefono" /></div>
+          <div class="field"><label>Correo</label><input name="correo" /></div>
+          <div class="field"><label>Dirección</label><input name="direccion" /></div>
+          <div class="field"><label>Estado</label>
+            <select name="estado">
+              <option>Activo</option>
+              <option>Inactivo</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button type="button" id="agregar" class="ghost">Agregar</button>
+            <button type="submit" class="primary">Guardar</button>
+            <button type="button" id="cancel" class="ghost">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+
+    <main class="panel table-panel">
+      <div class="table-card">
+        <p class="subtitle"><strong>Listado de clientes</strong></p>
+        <table id="tabla-clientes" class="table-list">
+          <thead>
+            <tr><th>ID</th><th>DNI/RUC</th><th>Nombre completo</th><th>Teléfono</th><th>Correo</th><th>Dirección</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+  
+  </section>
+</body>
+</html>
